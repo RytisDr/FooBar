@@ -1,9 +1,6 @@
 body {
   background-image: url(images/wood-material-background-lighter_1528x1200px.jpg);
 }
-main {
-  position: relative;
-}
 
 div {
   display: grid;
@@ -24,7 +21,7 @@ h2 {
 }
 section {
   position: relative;
-  margin: 10px;
+  margin: 0px 0px 10px 0px;
   background-color: #08737b;
 }
 article {
@@ -42,41 +39,49 @@ article {
 /* Poster Decorations */
 img {
   position: absolute;
+  z-index: -5;
 }
 main img:nth-child(2) {
   left: 34%;
-  top: -24%;
-  z-index: -5;
+  top: 0%;
 }
 main img:nth-child(3) {
-  left: 8.5vw;
-  top: 7vh;
+  left: 8vw;
+  top: 8.5vh;
 }
 main img:nth-child(4) {
   left: 82vw;
-  top: 7vh;
+  top: 8.5vh;
 }
 
 /* Beer Labels */
 
 main img:nth-child(6) {
-  top: 33vh;
+  top: 27vh;
+  left: 1vw;
 }
 main img:nth-child(7) {
-  top: 59vh;
+  top: 50vh;
 }
 main img:nth-child(8) {
-  left: 91vw;
+  top: 68vh;
 }
 main img:nth-child(9) {
   left: 91vw;
-  top: 30vh;
 }
+
 main img:nth-child(10) {
   left: 91vw;
-  top: 53vh;
+  top: 31vh;
 }
 main img:nth-child(11) {
   left: 89vw;
+  top: 55vh;
+}
+main img:nth-child(12) {
+  left: 89vw;
   top: 70vh;
+}
+object {
+  float: left;
 }
