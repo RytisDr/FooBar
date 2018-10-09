@@ -1,14 +1,14 @@
 "use strict";
 
 function init() {
-  // setInterval(update, 5000)
-  update();
+  setInterval(update, 5000);
+  // update();
 }
 init();
 function update() {
   let data = JSON.parse(FooBar.getData());
-  console.log(data);
-  // handleBarTenders(data.bartenders);
+  // console.log(data);
+  handleBarTenders(data.bartenders);
   // showTaps(data.taps)
 }
 
