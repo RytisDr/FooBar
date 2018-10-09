@@ -8,18 +8,20 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kea-alt-del.dk/2018/front/foobar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <title>FooBar</title>
 </head>
 
 <body>
     <main>
-        <h1> FooBar</h1>
+        <h1>FooBar</h1>
         <div>
             <section id="bartenders"></section>
             <section id="queue"></section>
-            <section id="sold"></section>
+            <section id="sold">
+                <canvas id="topBeerChart" height="100"></canvas>
+            </section>
             <section id="stock"></section>
-
         </div>
     </main>
     <script src="main.js"></script>
