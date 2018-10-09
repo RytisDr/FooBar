@@ -25,16 +25,16 @@ function customersInQueue(customers, data) {
   console.log(customers);
   console.log(data);
   const container = document.querySelector("section:nth-child(2) article");
-  let array = [];
+
   container.innerHTML = "";
   for (let i = 0; i < customers; i++) {
-    let img = document.createElement("object");
-    img.type = "image/svg+xml";
-    img.data = "homer.svg";
-    img.style.width = "50px";
+    let homer = document.createElement("object");
+    homer.type = "image/svg+xml";
+    homer.data = "images/homer.svg";
+    homer.style.width = "50px";
     let id = data[i].id;
-    img.classList.add("homer" + id);
-    container.appendChild(img);
+    homer.classList.add("homer" + id);
+    container.appendChild(homer);
   }
   let count = document.createElement("p");
   count.textContent = customers;
