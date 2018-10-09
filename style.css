@@ -1,3 +1,10 @@
+body {
+  background-image: url(images/wood-material-background-lighter_1528x1200px.jpg);
+}
+main {
+  position: relative;
+}
+
 div {
   display: grid;
   position: absolute;
@@ -6,13 +13,70 @@ div {
   grid-template-rows: 1fr 1fr;
   width: 78vw;
   height: 85vh;
-  background-color: aqua;
 }
 h1 {
   font-family: Bungee Shade;
   text-align: center;
 }
+h2 {
+  font-family: Bungee Shade;
+  font-size: 2vw;
+}
 section {
-  margin: 15px;
-  background-color: aliceblue;
+  position: relative;
+  margin: 10px;
+  background-color: #08737b;
+}
+article {
+  width: 94%;
+  height: 90%;
+  background-color: #f4ede5;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  border-radius: 2%;
+}
+.hidden {
+  display: none;
+}
+/* Poster Decorations */
+img {
+  position: absolute;
+}
+main img:nth-child(2) {
+  left: 34%;
+  top: -24%;
+  z-index: -5;
+}
+main img:nth-child(3) {
+  left: 8.5vw;
+  top: 7vh;
+}
+main img:nth-child(4) {
+  left: 82vw;
+  top: 7vh;
+}
+
+/* Beer Labels */
+
+main img:nth-child(6) {
+  top: 33vh;
+}
+main img:nth-child(7) {
+  top: 59vh;
+}
+main img:nth-child(8) {
+  left: 91vw;
+}
+main img:nth-child(9) {
+  left: 91vw;
+  top: 30vh;
+}
+main img:nth-child(10) {
+  left: 91vw;
+  top: 53vh;
+}
+main img:nth-child(11) {
+  left: 89vw;
+  top: 70vh;
 }
