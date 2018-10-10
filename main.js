@@ -30,13 +30,13 @@ function showCustomer(number) {
   for (let i = 0; i < number; i++) {
     let homer = document.createElement("img");
     if (number <= 5) {
-      homer.src = "images/homer-red.png";
+      homer.src = "images/homer-yellow.png";
     }
-    if (number > 5 && number < 9) {
+    if (number > 5 && number < 10) {
       homer.src = "images/homer1.png";
     }
-    if (number >= 9) {
-      homer.src = "images/homer-yellow.png";
+    if (number >= 10) {
+      homer.src = "images/homer-red.png";
     }
     container.appendChild(homer);
   }

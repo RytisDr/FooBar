@@ -89,7 +89,7 @@ main img:nth-child(12) {
 
 #container img {
   float: left;
-  width: 50px;
+  width: 46px;
 }
 #container {
   margin-left: 20px;
@@ -111,9 +111,11 @@ main img:nth-child(12) {
 #yellow {
   display: inline-block;
   text-align: center;
+  margin-left: 5px;
 }
 #green p,
 #red p,
 #yellow p {
   margin: 0;
+  font-size: 15pt;
 }
