@@ -1,4 +1,6 @@
 "use strict";
+//define sales chart
+let salesChart;
 
 function init() {
   setInterval(update, 5000);
@@ -6,16 +8,13 @@ function init() {
 }
 init();
 function update() {
-  //define sales chart
-  let salesChart;
-
   let data = JSON.parse(FooBar.getData());
   //handleBarTenders(data.bartenders);
   showTaps(data.taps);
   if (salesChart == undefined) {
-    createSalesChart(data.taps, salesChart);
+    salesChart = createSalesChart(data.taps);
   } else {
-    updateSalesChart(data.taps, salesChart);
+    updateSalesChart(data.taps);
   }
 }
 
@@ -27,45 +26,44 @@ function showTaps(taps) {
   //console.log(taps);
 }
 
-function createSalesChart(taps, salesChart) {
-  let beersOnTap = [];
+function createSalesChart(taps) {
   let chartCanvas = document.querySelector("#topBeerChart");
   //push names of beers on tap into an array
+  let beersOnTap = [];
   taps.forEach(tap => {
     beersOnTap.push(tap.beer);
   });
-  let chartData = {
-    labels: beersOnTap,
-    datasets: [
-      {
-        data: [0, 0, 0, 0, 0, 0, 0],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-          "rgba(255, 159, 64, 0.2)"
-        ]
-      }
-    ]
-  };
-  //sort chart data in descenting order
-  chartData.datasets[0].data.sort(sortDesc);
-
-  let barChart = new Chart(chartCanvas, {
+  let salesChart = new Chart(chartCanvas, {
     type: "horizontalBar",
-    data: chartData
+    data: {
+      labels: beersOnTap,
+      datasets: [
+        {
+          data: [0, 0, 0, 0, 0, 0, 0],
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)",
+            "rgba(255, 159, 64, 0.2)"
+          ]
+        }
+      ]
+    }
   });
-  salesChart = barChart;
+  return salesChart;
 }
-function updateSalesChart(taps, salesChart) {
-  salesChart.data.datasets[0].data = [];
-  taps.forEach(tap =>
-    salesChart.data.datasets[0].data.push(tap.capacity - tap.level)
-  );
-
+function updateSalesChart(taps) {
+  let salesArr = [];
+  taps.forEach(tap => {
+    salesArr.push(tap.capacity - tap.level);
+  });
+  salesChart.data.datasets[0].data = salesArr;
+  //sort chart data in descenting order
+  //salesChart.data.data.sort(sortDesc);
+  salesChart.update();
   console.log(taps);
 }
 //sort function
