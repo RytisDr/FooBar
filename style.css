@@ -2,7 +2,7 @@ body {
   background-image: url(images/wood-material-background-lighter_1528x1200px.jpg);
 }
 
-div {
+#dashboard {
   display: grid;
   position: absolute;
   left: 11vw;
@@ -19,10 +19,11 @@ h2 {
   font-family: Bungee Shade;
   font-size: 1.5vw;
   text-align: center;
+  margin: 0;
 }
 section {
   position: relative;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 10px 10px 0px;
   background-color: #08737b;
 }
 article {
@@ -86,8 +87,33 @@ main img:nth-child(12) {
 
 /* Queue graph */
 
-section:nth-child(2) article img {
+#container img {
   float: left;
   width: 50px;
-  opacity: 0;
+}
+#container {
+  margin-left: 20px;
+  position: relative;
+}
+#legend {
+  position: absolute;
+  top: 63%;
+  left: 80%;
+}
+#legend img {
+  width: 35px;
+}
+#queue-background {
+  position: relative;
+}
+#green,
+#red,
+#yellow {
+  display: inline-block;
+  text-align: center;
+}
+#green p,
+#red p,
+#yellow p {
+  margin: 0;
 }
