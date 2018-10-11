@@ -148,13 +148,3 @@ function updateSalesChart(taps) {
   //update chart (with animation)
   salesChart.update();
 }
-//sort by descending function
-function sortDesc(a, b) {
-  if (a > b) {
-    return -1;
-  }
-  if (a < b) {
-    return 1;
-  }
-  return 0;
-}
