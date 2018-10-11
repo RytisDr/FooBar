@@ -196,11 +196,11 @@ h3 {
 }
 #bartenders article {
   width: 95%;
-  height: 73%;
+  height: 75%;
   background-color: #f4ede5;
   position: absolute;
   left: 2.5%;
-  top: 75px;
+
   border-radius: 2%;
   display: grid;
   grid-template-columns: 1r 21fr;
