@@ -17,7 +17,7 @@ function update() {
   if (salesChart == undefined) {
     salesChart = createSalesChart(data.taps);
   } else {
-    //if sales chart exists, just update (chart.js animates changes)
+    //if sales chart exists, just update data (chart.js animates changes)
     updateSalesChart(data.taps);
   }
 }
@@ -145,7 +145,7 @@ function updateSalesChart(taps) {
   document.querySelector("#sold p span").textContent = totalSales;
   //equalize data in graph to sales array
   salesChart.data.datasets[0].data = salesArr;
-  //update chart
+  //update chart (with animation)
   salesChart.update();
 }
 //sort by descending function
