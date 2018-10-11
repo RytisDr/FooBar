@@ -8,7 +8,6 @@ function init() {
 init();
 function update() {
   let data = JSON.parse(FooBar.getData());
-  console.log(data);
   showCustomer(data.queue.length);
   barTendersPerformance(data.bartenders);
   storageHandling(data.storage);
@@ -17,7 +16,7 @@ function update() {
   if (salesChart == undefined) {
     salesChart = createSalesChart(data.taps);
   } else {
-    //if sales chart exists, just update (chart.js animates changes)
+    //if sales chart exists, just update data (chart.js animates changes)
     updateSalesChart(data.taps);
   }
 }
@@ -131,10 +130,11 @@ function updateSalesChart(taps) {
   let totalSales = 0;
   let salesArr = [];
   taps.forEach(tap => {
+    let soldCl = tap.capacity - tap.level;
     if (tap.capacity - tap.level == tap.capacity) {
       salesArr.push(tap.capacity);
     } else {
-      salesArr.push(tap.capacity - tap.level);
+      salesArr.push(soldCl);
     }
   });
   //function to accumulate numbers in array (sales array)
@@ -145,7 +145,7 @@ function updateSalesChart(taps) {
   document.querySelector("#sold p span").textContent = totalSales;
   //equalize data in graph to sales array
   salesChart.data.datasets[0].data = salesArr;
-  //update chart
+  //update chart (with animation)
   salesChart.update();
 }
 //sort by descending function
