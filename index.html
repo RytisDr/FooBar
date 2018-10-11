@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Comfortaa" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kea-alt-del.dk/2018/front/foobar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <title>FooBar</title>
 </head>
 
@@ -75,7 +76,10 @@
             </article>
         </section>
         <section id="sold">
-            <article></article>
+            <article>
+                <canvas id="topBeerChart" height="100"></canvas>
+                <p>Total sales: <span></span></p>
+            </article>
         </section>
         <section id="stock">
             <h2 class="h1">Beer kegs in stock</h2>
