@@ -2,17 +2,12 @@
 
 function init() {
   setInterval(update, 5000);
-  // update();
 }
 init();
 function update() {
   let data = JSON.parse(FooBar.getData());
   console.log(data);
-
   showCustomer(data.queue.length);
-  // handleBarTenders(data.bartenders);
-  // showTaps(data.taps)
-  // console.log(data);
   barTendersPerformance(data.bartenders);
   storageHandling(data.storage);
 }
