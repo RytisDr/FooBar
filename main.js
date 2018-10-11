@@ -4,69 +4,80 @@ let salesChart;
 
 function init() {
   setInterval(update, 5000);
-  //update();
 }
 init();
 function update() {
   let data = JSON.parse(FooBar.getData());
-  //handleBarTenders(data.bartenders);
-  showTaps(data.taps);
+
+  //if sales chart doesnt exist, create it first
   if (salesChart == undefined) {
     salesChart = createSalesChart(data.taps);
   } else {
+    //if sales chart exists, just update (chart.js animates changes)
     updateSalesChart(data.taps);
   }
 }
 
-function handleBarTenders(bartenders) {
-  //console.log(bartenders[1]);
-}
-
-function showTaps(taps) {
-  //console.log(taps);
-}
-
 function createSalesChart(taps) {
+  //Dom canvas element
   let chartCanvas = document.querySelector("#topBeerChart");
   //push names of beers on tap into an array
   let beersOnTap = [];
   taps.forEach(tap => {
     beersOnTap.push(tap.beer);
   });
+
+  //create horizontal bar chart
   let salesChart = new Chart(chartCanvas, {
     type: "horizontalBar",
     data: {
       labels: beersOnTap,
       datasets: [
         {
+          label: "Beer Sales in cl",
           data: [0, 0, 0, 0, 0, 0, 0],
           backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
+            "#08737B",
+            "#A22727",
+            "#A97546",
+            "#CDD29E",
+            "#460606",
+            "#872301",
+            "#D77200"
           ]
         }
       ]
     }
   });
+  Chart.defaults.global.defaultFontFamily = "Comfortaa";
+  //return (to apply to the variable)
   return salesChart;
 }
+
+//update sales on every update of data
 function updateSalesChart(taps) {
+  //total sales counter
+  let totalSales = 0;
   let salesArr = [];
   taps.forEach(tap => {
-    salesArr.push(tap.capacity - tap.level);
+    if (tap.capacity - tap.level == tap.capacity) {
+      salesArr.push(tap.capacity);
+    } else {
+      salesArr.push(tap.capacity - tap.level);
+    }
   });
+  //function to accumulate numbers in array (sales array)
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  //use reducer to calculate total sales
+  totalSales = salesArr.reduce(reducer);
+  //put total sales number in p span
+  document.querySelector("#sold p span").textContent = totalSales;
+  //equalize data in graph to sales array
   salesChart.data.datasets[0].data = salesArr;
-  //sort chart data in descenting order
-  //salesChart.data.data.sort(sortDesc);
+  //update chart
   salesChart.update();
-  console.log(taps);
 }
-//sort function
+//sort by descending function
 function sortDesc(a, b) {
   if (a > b) {
     return -1;
