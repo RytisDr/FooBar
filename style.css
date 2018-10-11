@@ -1,7 +1,6 @@
 body {
   background-image: url(images/wood-material-background-lighter_1528x1200px.jpg);
   height: 100vh;
-  overflow: hidden;
 }
 
 #dashboard {
@@ -97,14 +96,7 @@ main img:nth-child(12) {
   grid-row: 1;
   grid-column: 1;
 }
-#queue article {
-  width: 95%;
-  height: 75%;
-  background-color: #f4ede5;
-  position: absolute;
-  left: 2.5%;
-  border-radius: 2%;
-}
+
 #legend {
   position: absolute;
   grid-row: 2;
@@ -114,12 +106,17 @@ main img:nth-child(12) {
   width: 35px;
 }
 #queue-background {
-  position: relative;
+  position: absolute;
   display: grid;
   grid-template-columns: 3.4fr 1fr;
   grid-template-rows: 2fr 1.5fr;
   height: 75%;
+  background-color: #f4ede5;
+  width: 95%;
+  border-radius: 2%;
+  left: 2.5%;
 }
+
 #green,
 #red,
 #yellow {
@@ -160,7 +157,7 @@ td {
 #stock {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 4.7fr;
+  grid-template-rows: 0.6fr 4.8fr;
 }
 h3 {
   font-family: "Comfortaa", cursive;
