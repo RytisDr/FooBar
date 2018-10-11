@@ -108,7 +108,7 @@ function createSalesChart(taps) {
           label: "Beer Sales in cl",
           data: [0, 0, 0, 0, 0, 0, 0],
           backgroundColor: [
-            "#08737B",
+            "#338538",
             "#A22727",
             "#A97546",
             "#CDD29E",

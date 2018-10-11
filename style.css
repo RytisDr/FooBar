@@ -139,7 +139,6 @@ td {
   padding: 1em 3.6em 1em 3em;
   font-family: "Comfortaa", cursive;
   font-size: 18px;
-  text-align: center;
 }
 
 .kegs {
@@ -195,6 +194,23 @@ h3 {
   grid-column: 2;
   grid-row: 2;
 }
+
+/* Beer Sales Chart */
 #topBeerChart {
   margin: auto;
+}
+#sold article {
+  width: 95%;
+  height: 73%;
+  background-color: #f4ede5;
+  position: absolute;
+  left: 2.5%;
+  top: 75px;
+  border-radius: 2%;
+}
+#sold p {
+  margin-left: 70%;
+  margin-top: 30px;
+  font-size: 13pt;
+  font-family: "Comfortaa", cursive;
 }
