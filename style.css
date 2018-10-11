@@ -31,15 +31,7 @@ section {
   margin: 0px 10px 10px 0px;
   background-color: #08737b;
 }
-article {
-  width: 94%;
-  height: 90%;
-  background-color: #f4ede5;
-  position: absolute;
-  top: 5%;
-  left: 3%;
-  border-radius: 2%;
-}
+
 .hidden {
   display: none;
 }
@@ -99,13 +91,21 @@ main img:nth-child(12) {
 }
 #container {
   margin-left: 20px;
+  margin-top: 15px;
   position: relative;
-  grid-row: 2;
+  grid-row: 1;
   grid-column: 1;
+}
+#queue article {
+  width: 95%;
+  height: 75%;
+  background-color: #f4ede5;
+  position: absolute;
+  left: 2.5%;
+  border-radius: 2%;
 }
 #legend {
   position: absolute;
-  top: 54%;
   grid-row: 2;
   grid-column: 2;
 }
@@ -115,8 +115,8 @@ main img:nth-child(12) {
 #queue-background {
   position: relative;
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 3.4fr 1fr;
+  grid-template-rows: 2fr 1.3fr;
 }
 #green,
 #red,
@@ -129,15 +129,17 @@ main img:nth-child(12) {
 #red p,
 #yellow p {
   margin: 0;
-  font-size: 15pt;
+  font-size: 13pt;
+  font-family: "Comfortaa", cursive;
 }
 
 /* Bartenders and Stock */
 
 td {
-  padding: 1em 3em 1em 3em;
+  padding: 1em 3.6em 1em 3em;
   font-family: "Comfortaa", cursive;
   font-size: 18px;
+  text-align: center;
 }
 
 .kegs {
@@ -174,17 +176,22 @@ h3 {
   justify-content: flex-end;
   padding: 1em 1em 0 0;
 }
+.container,
+.container2 {
+  display: grid;
+  width: 90%;
+  height: 90%;
+  margin-right: 15px;
+  margin-left: 18px;
+  background-color: #f4ede5;
+  border-radius: 5%;
+}
 .container {
   grid-column: 1;
   grid-row: 2;
-  display: grid;
-  width: 45%;
-  margin-right: 15px;
 }
 
 .container2 {
   grid-column: 2;
   grid-row: 2;
-  display: grid;
-  width: 90%;
 }

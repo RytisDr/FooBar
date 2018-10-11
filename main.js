@@ -67,10 +67,10 @@ function showCustomer(number) {
 
   for (let i = 0; i < number; i++) {
     let homer = document.createElement("img");
-    if (number <= 5) {
+    if (number <= 4) {
       homer.src = "images/homer-yellow.png";
     }
-    if (number > 5 && number < 10) {
+    if (number > 4 && number < 10) {
       homer.src = "images/homer1.png";
     }
     if (number >= 10) {
