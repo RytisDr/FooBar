@@ -8,7 +8,6 @@ function init() {
 init();
 function update() {
   let data = JSON.parse(FooBar.getData());
-  console.log(data);
   showCustomer(data.queue.length);
   barTendersPerformance(data.bartenders);
   storageHandling(data.storage);
@@ -131,10 +130,11 @@ function updateSalesChart(taps) {
   let totalSales = 0;
   let salesArr = [];
   taps.forEach(tap => {
+    let soldCl = tap.capacity - tap.level;
     if (tap.capacity - tap.level == tap.capacity) {
       salesArr.push(tap.capacity);
     } else {
-      salesArr.push(tap.capacity - tap.level);
+      salesArr.push(soldCl);
     }
   });
   //function to accumulate numbers in array (sales array)
