@@ -126,3 +126,57 @@ main img:nth-child(12) {
   margin: 0;
   font-size: 15pt;
 }
+td {
+  padding: 1em 3em 1em 2em;
+  font-family: "Comfortaa", cursive;
+}
+table {
+  padding-top: 3em;
+}
+.container {
+  display: grid;
+}
+
+img {
+  width: 50px;
+  height: auto;
+}
+.one,
+.two,
+.three,
+.four,
+.five {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2px;
+  padding: 1em;
+}
+#stock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "h1 h1" "arti1 arti2";
+}
+h3 {
+  font-family: "Comfortaa", cursive;
+  font-size: 0.8em;
+}
+.bartenders {
+  width: 20%;
+  height: auto;
+  padding-left: 1em;
+}
+.manspic {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1em 1em 0 0;
+}
+.container {
+  grid-area: arti1;
+}
+.container2 {
+  grid-area: arti2;
+}
+.h1 {
+  grid-area: h1;
+}
